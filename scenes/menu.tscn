@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cr11c7dry7044"]
+
+[node name="Menu" type="Control" unique_id=809268835]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

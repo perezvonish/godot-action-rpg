@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://d0gcm6pcmv3ar"]
+
+[ext_resource type="Script" uid="uid://854h2das5vr4" path="res://entities/enemy/enemy.gd" id="1_dt443"]
+[ext_resource type="Resource" uid="uid://bam1qfr1nxs0x" path="res://entities/enemy/slimes/normal.tres" id="2_4wwj3"]
+[ext_resource type="Script" uid="uid://cna5c61237pwq" path="res://entities/enemy/detection.gd" id="4_ou7j8"]
+
+[sub_resource type="GDScript" id="GDScript_dt443"]
+script/source = "class_name EnemyStats
+extends Node
+
+@onready var health: int = 100;
+@onready var damage: int = 25;
+"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wl1l3"]
+radius = 40.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ou7j8"]
+radius = 25.179358
+
+[node name="Enemy" type="CharacterBody2D" unique_id=2100827221]
+script = ExtResource("1_dt443")
+data = ExtResource("2_4wwj3")
+
+[node name="Texture (sprite2d)" type="Sprite2D" parent="." unique_id=1609240352]
+
+[node name="Systems" type="Node" parent="." unique_id=741080997]
+
+[node name="Stats" type="Node" parent="Systems" unique_id=766489927]
+script = SubResource("GDScript_dt443")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=36952056]
+shape = SubResource("CircleShape2D_wl1l3")
+
+[node name="Detection Area (Area2D)" type="Area2D" parent="." unique_id=594225671]
+script = ExtResource("4_ou7j8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detection Area (Area2D)" unique_id=1214359634]
+scale = Vector2(2, 2)
+shape = SubResource("CircleShape2D_ou7j8")

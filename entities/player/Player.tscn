@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://v3c46ijwtxym"]
+
+[ext_resource type="Script" uid="uid://cdxiefapd7hpw" path="res://entities/player/player.gd" id="1_glu7e"]
+[ext_resource type="Script" uid="uid://dfelyhel1y7ds" path="res://scripts/player/movement.gd" id="1_qq40p"]
+[ext_resource type="Script" uid="uid://c326nd2kb4eoi" path="res://core/health/health_contoller.gd" id="4_4pwj0"]
+[ext_resource type="Script" uid="uid://bngt12xi65vt0" path="res://entities/player/systems/stats.gd" id="4_35c0j"]
+[ext_resource type="PackedScene" uid="uid://bu6ga7f36qpo2" path="res://ui/hud/hud.tscn" id="5_mamfr"]
+[ext_resource type="Texture2D" uid="uid://dv7ltfa0clwaw" path="res://assets/parts.png" id="5_xgtsh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_glu7e"]
+size = Vector2(32, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8r8t0"]
+atlas = ExtResource("5_xgtsh")
+region = Rect2(172.87288, 496.9286, 98.72624, 115.14856)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mamfr"]
+atlas = ExtResource("5_xgtsh")
+region = Rect2(164.33427, 828.6444, 51.57939, 69.71399)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xgtsh"]
+atlas = ExtResource("5_xgtsh")
+region = Rect2(225.68466, 830.1882, 51.28183, 68.0788)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ctndf"]
+atlas = ExtResource("5_xgtsh")
+region = Rect2(162.02975, 340.22333, 114.39877, 106.67975)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hr8rp"]
+atlas = ExtResource("5_xgtsh")
+region = Rect2(161.32932, 662.1713, 44.119385, 91.99786)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xvkw1"]
+atlas = ExtResource("5_xgtsh")
+region = Rect2(234.62251, 660.49854, 43.166153, 93.34674)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jfcio"]
+atlas = ExtResource("5_xgtsh")
+region = Rect2(308.0968, 35.723022, 99.084595, 103.32559)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wx5su"]
+
+[node name="Player" type="CharacterBody2D" unique_id=1262160129]
+script = ExtResource("1_glu7e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1543241050]
+position = Vector2(0, -22)
+shape = SubResource("RectangleShape2D_glu7e")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=824388177]
+
+[node name="Systems" type="Node" parent="." unique_id=1497189512]
+
+[node name="Movement" type="Node" parent="Systems" unique_id=977487019]
+script = ExtResource("1_qq40p")
+
+[node name="Stats" type="Node" parent="Systems" unique_id=1735336528]
+script = ExtResource("4_35c0j")
+
+[node name="Input" type="Node" parent="Systems" unique_id=1178490989]
+
+[node name="Experience" type="Node" parent="Systems" unique_id=1514801718]
+
+[node name="Health" type="Node" parent="Systems" unique_id=200974134]
+script = ExtResource("4_4pwj0")
+maxHealth = 100
+
+[node name="UI" type="Node" parent="." unique_id=1046445956]
+
+[node name="Hud" parent="UI" unique_id=96938389 instance=ExtResource("5_mamfr")]
+
+[node name="Visual" type="Node2D" parent="." unique_id=681747588]
+
+[node name="Legs" type="Sprite2D" parent="Visual" unique_id=1345432931]
+position = Vector2(0, -6)
+scale = Vector2(0.2015306, 0.20743126)
+texture = SubResource("AtlasTexture_8r8t0")
+
+[node name="LeftLeg" type="Sprite2D" parent="Visual/Legs" unique_id=1078400721]
+position = Vector2(-34.73418, 48.20874)
+texture = SubResource("AtlasTexture_mamfr")
+
+[node name="RightLeg" type="Sprite2D" parent="Visual/Legs" unique_id=903066417]
+position = Vector2(34.73418, 53.029617)
+texture = SubResource("AtlasTexture_xgtsh")
+
+[node name="Body" type="Sprite2D" parent="Visual" unique_id=421909150]
+position = Vector2(0, -25)
+scale = Vector2(0.21875, 0.21875)
+texture = SubResource("AtlasTexture_ctndf")
+
+[node name="Hands" type="Node2D" parent="Visual" unique_id=1220029582]
+position = Vector2(-1, -20)
+scale = Vector2(0.23055886, 0.21839137)
+
+[node name="LeftHand" type="Sprite2D" parent="Visual/Hands" unique_id=1301925613]
+position = Vector2(-43.372875, -9.157871)
+texture = SubResource("AtlasTexture_hr8rp")
+
+[node name="RightHand" type="Sprite2D" parent="Visual/Hands" unique_id=1644600362]
+position = Vector2(52.047447, -9.157871)
+texture = SubResource("AtlasTexture_xvkw1")
+
+[node name="Head" type="Sprite2D" parent="Visual" unique_id=1082168736]
+position = Vector2(0, -43)
+scale = Vector2(0.22580642, 0.22580642)
+texture = SubResource("AtlasTexture_jfcio")
+
+[node name="Hear" type="Sprite2D" parent="Visual/Head" unique_id=1335210586]
+texture = SubResource("AtlasTexture_wx5su")
