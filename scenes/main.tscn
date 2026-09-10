@@ -2,6 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://v3c46ijwtxym" path="res://entities/player/Player.tscn" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://d0gcm6pcmv3ar" path="res://entities/enemy/enemy.tscn" id="2_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://dsjboivbr4ghe" path="res://entities/item/item.tscn" id="3_jyhfs"]
+[ext_resource type="Resource" uid="uid://cdtko8ypvokdh" path="res://entities/item/food/apple.tres" id="4_tbgi4"]
 
 [node name="Node2D" type="Node2D" unique_id=1707446834]
 
@@ -16,3 +18,7 @@ position = Vector2(405, 97)
 
 [node name="Player" parent="." unique_id=1262160129 instance=ExtResource("1_o5qli")]
 position = Vector2(608, 390)
+
+[node name="Item" parent="." unique_id=1085552623 instance=ExtResource("3_jyhfs")]
+position = Vector2(916, 366)
+data = ExtResource("4_tbgi4")

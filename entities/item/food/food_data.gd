@@ -5,6 +5,5 @@ extends ItemData
 
 signal food_consumed(food: FoodItem)
 
-func eat(player: Player) -> void: 
-	player._take_damage()	
-	food_consumed.emit()
+func eat() -> void: 
+	food_consumed.emit(self)
