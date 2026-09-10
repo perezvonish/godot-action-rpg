@@ -4,11 +4,36 @@
 [ext_resource type="Script" uid="uid://dfelyhel1y7ds" path="res://scripts/player/movement.gd" id="1_qq40p"]
 [ext_resource type="Script" uid="uid://c326nd2kb4eoi" path="res://core/health/health_contoller.gd" id="4_4pwj0"]
 [ext_resource type="Script" uid="uid://bngt12xi65vt0" path="res://entities/player/systems/stats.gd" id="4_35c0j"]
+[ext_resource type="Script" uid="uid://df1vu2jtl62c8" path="res://core/experience/controller.gd" id="4_fmb3c"]
 [ext_resource type="PackedScene" uid="uid://bu6ga7f36qpo2" path="res://ui/hud/hud.tscn" id="5_mamfr"]
+[ext_resource type="Script" uid="uid://cwvx3iap67tos" path="res://core/experience/level.gd" id="5_q57vx"]
 [ext_resource type="Texture2D" uid="uid://dv7ltfa0clwaw" path="res://assets/parts.png" id="5_xgtsh"]
+[ext_resource type="Script" uid="uid://dq6fctidiwa8s" path="res://core/experience/config.gd" id="6_ak4un"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_glu7e"]
 size = Vector2(32, 68)
+
+[sub_resource type="Resource" id="Resource_1ms0h"]
+script = ExtResource("5_q57vx")
+level = 1
+metadata/_custom_type_script = "uid://cwvx3iap67tos"
+
+[sub_resource type="Resource" id="Resource_2rv2u"]
+script = ExtResource("5_q57vx")
+level = 2
+requiredXp = 100
+metadata/_custom_type_script = "uid://cwvx3iap67tos"
+
+[sub_resource type="Resource" id="Resource_mq27t"]
+script = ExtResource("5_q57vx")
+level = 3
+requiredXp = 220
+metadata/_custom_type_script = "uid://cwvx3iap67tos"
+
+[sub_resource type="Resource" id="Resource_kwk8g"]
+script = ExtResource("6_ak4un")
+levels = Array[ExtResource("5_q57vx")]([SubResource("Resource_1ms0h"), SubResource("Resource_2rv2u"), SubResource("Resource_mq27t")])
+metadata/_custom_type_script = "uid://dq6fctidiwa8s"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8r8t0"]
 atlas = ExtResource("5_xgtsh")
@@ -60,6 +85,8 @@ script = ExtResource("4_35c0j")
 [node name="Input" type="Node" parent="Systems" unique_id=1178490989]
 
 [node name="Experience" type="Node" parent="Systems" unique_id=1514801718]
+script = ExtResource("4_fmb3c")
+config = SubResource("Resource_kwk8g")
 
 [node name="Health" type="Node" parent="Systems" unique_id=200974134]
 script = ExtResource("4_4pwj0")

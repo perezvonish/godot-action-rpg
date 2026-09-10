@@ -2,6 +2,7 @@ class_name HealthController
 extends Node
 
 signal changed(current: int, max: int)
+signal died()
 
 @export var maxHealth: int
 
@@ -17,3 +18,6 @@ func heal(value: int) -> void:
 func takeDamage(value: int) -> void:
 	health = maxi(health - value, 0)
 	changed.emit(health, maxHealth)
+	
+	if health <= 0:
+		died.emit()
