@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://fg7eitqaf4ui"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mc3sx"]
+line_spacing = 5.0
+font_size = 64
+
+[node name="DeathScreen" type="CanvasLayer" unique_id=381728359]
+
+[node name="Menu" type="Control" parent="." unique_id=1199477131]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BlackBackground" type="ColorRect" parent="Menu" unique_id=1639639494]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.19607843)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu" unique_id=117843223]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -200.0
+offset_right = 400.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Respawn" type="MenuButton" parent="Menu/VBoxContainer" unique_id=1741340557]
+layout_mode = 2
+text = "Respawn"
+
+[node name="Exit" type="MenuButton" parent="Menu/VBoxContainer" unique_id=388248389]
+layout_mode = 2
+text = "Exit"
+
+[node name="Label" type="Label" parent="Menu" unique_id=517020465]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -141.5
+offset_top = -300.0
+offset_right = 141.5
+offset_bottom = -212.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "You died"
+label_settings = SubResource("LabelSettings_mc3sx")
+horizontal_alignment = 1

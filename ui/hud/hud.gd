@@ -1,7 +1,7 @@
 class_name UiHud
 extends Node
 
-@onready var healthProgressBar: ProgressBar = $HealthBar	
+@onready var healthProgressBar: ProgressBar = $Health/ProgressBar
 
 func bind_health(health: HealthController) -> void:
 	health.changed.connect(updateHealth)

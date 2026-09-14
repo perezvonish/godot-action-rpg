@@ -66,6 +66,7 @@ region = Rect2(308.0968, 35.723022, 99.084595, 103.32559)
 [sub_resource type="AtlasTexture" id="AtlasTexture_wx5su"]
 
 [node name="Player" type="CharacterBody2D" unique_id=1262160129]
+scale = Vector2(2, 2)
 script = ExtResource("1_glu7e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1543241050]

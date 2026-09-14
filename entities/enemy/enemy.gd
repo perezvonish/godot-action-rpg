@@ -13,4 +13,4 @@ func _ready() -> void:
 	sprite.texture = data.texture
 
 func _make_hit(player: Player) -> void:
-	player._take_damage(data.damage)
+	player.take_damage(data.damage)

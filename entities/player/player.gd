@@ -1,16 +1,28 @@
 class_name Player
 extends CharacterBody2D
 
-@onready var systems_stats: PlayerStats = $Systems/Stats
-@onready var health: HealthController = $Systems/Health
+@onready var stats: PlayerStats = $Systems/Stats
+@onready var healthController: HealthController = $Systems/Health
 @onready var ui_hud: UiHud = $UI/Hud
 
+signal died
+
 func _ready() -> void:
-	ui_hud.bind_health(health)
+	_get_ready_signals()
+	_get_ready_ui()
+	
+func _get_ready_signals():
+	healthController.died.connect(_on_death)
+	
+func _get_ready_ui():
+	ui_hud.bind_health(healthController)
 	
 func heal(value: int) -> void:
-	health.heal(value)
+	healthController.heal(value)
 	
-func _take_damage(value: int) -> void:
+func take_damage(value: int) -> void:
 	print("Damage: ", value)
-	health.takeDamage(value)
+	healthController.takeDamage(value)
+
+func _on_death():
+	died.emit()

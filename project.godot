@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="godot-action-rpg"
-run/main_scene="uid://da5hd3jj3d27b"
+run/main_scene="uid://dex8f01n4jhi0"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 

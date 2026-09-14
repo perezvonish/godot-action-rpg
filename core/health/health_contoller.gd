@@ -16,7 +16,7 @@ func heal(value: int) -> void:
 	changed.emit(health, maxHealth)
 
 func takeDamage(value: int) -> void:
-	health = maxi(health - value, 0)
+	health = max(health - value, 0)
 	changed.emit(health, maxHealth)
 	
 	if health <= 0:
