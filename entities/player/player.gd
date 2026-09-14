@@ -1,12 +1,24 @@
 class_name Player
 extends CharacterBody2D
 
+const InventoryController = preload("res://core/inventory/inventory_controller.gd")
+
 @onready var stats: PlayerStats = $Systems/Stats
 @onready var health_controller: HealthController = $Systems/Health
 @onready var experience_controller: ExperienceController = $Systems/Experience
 @onready var debug_input: Node = $Systems/DebugInput
+@onready var inventory_controller: InventoryController = $Systems/Inventory
+
+var input_enabled: bool = true
 
 signal died
+
+
+func set_input_enabled(enabled: bool) -> void:
+	input_enabled = enabled
+	debug_input.set_process_unhandled_input(enabled)
+	if not enabled:
+		velocity = Vector2.ZERO
 
 func _ready() -> void:
 	_get_ready_signals()

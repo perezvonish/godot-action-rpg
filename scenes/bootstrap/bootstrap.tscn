@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bu6ga7f36qpo2" path="res://ui/hud/hud.tscn" id="3_qmdgp"]
 [ext_resource type="PackedScene" uid="uid://fg7eitqaf4ui" path="res://ui/death_screen/death_screen.tscn" id="4_a0385"]
 [ext_resource type="PackedScene" uid="uid://da5hd3jj3d27b" path="res://scenes/game/main.tscn" id="5_game"]
+[ext_resource type="PackedScene" path="res://ui/player_menu/player_menu.tscn" id="6_player_menu"]
 
 [node name="Bootstrap" type="Node2D" unique_id=1521807226]
 script = ExtResource("1_q8nw6")
@@ -12,3 +13,4 @@ game_scene = ExtResource("5_game")
 player_scene = ExtResource("2_a6xvj")
 hud_scene = ExtResource("3_qmdgp")
 death_screen_scene = ExtResource("4_a0385")
+player_menu_scene = ExtResource("6_player_menu")

@@ -8,7 +8,8 @@
 [ext_resource type="Script" uid="uid://cwvx3iap67tos" path="res://core/experience/level.gd" id="5_q57vx"]
 [ext_resource type="Texture2D" uid="uid://dv7ltfa0clwaw" path="res://assets/parts.png" id="5_xgtsh"]
 [ext_resource type="Script" uid="uid://dq6fctidiwa8s" path="res://core/experience/config.gd" id="6_ak4un"]
-[ext_resource type="Script" path="res://entities/player/systems/debug_input.gd" id="7_debug"]
+[ext_resource type="Script" uid="uid://cmiqga4quxuij" path="res://entities/player/systems/debug_input.gd" id="7_debug"]
+[ext_resource type="Script" uid="uid://by0uos2w6vuns" path="res://core/inventory/inventory_controller.gd" id="8_inventory"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_glu7e"]
 size = Vector2(32, 68)
@@ -93,6 +94,9 @@ config = SubResource("Resource_kwk8g")
 [node name="Health" type="Node" parent="Systems" unique_id=200974134]
 script = ExtResource("4_4pwj0")
 max_health = 100
+
+[node name="Inventory" type="Node" parent="Systems" unique_id=546847205]
+script = ExtResource("8_inventory")
 
 [node name="Visual" type="Node2D" parent="." unique_id=681747588]
 
