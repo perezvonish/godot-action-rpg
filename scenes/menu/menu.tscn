@@ -1,63 +1,260 @@
 [gd_scene format=3 uid="uid://cr11c7dry7044"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_y1u3h"]
-line_spacing = 5.0
-font_size = 64
+[ext_resource type="Script" uid="uid://cowmc34eqo8at" path="res://scenes/menu/menu.gd" id="1_menu"]
 
-[node name="Menu" type="CanvasLayer" unique_id=2086355386]
+[sub_resource type="Gradient" id="Gradient_background"]
+offsets = PackedFloat32Array(0, 0.52, 1)
+colors = PackedColorArray(0.025, 0.035, 0.065, 1, 0.055, 0.075, 0.12, 1, 0.12, 0.055, 0.04, 1)
 
-[node name="Menu" type="Control" parent="." unique_id=1284336499]
+[sub_resource type="GradientTexture2D" id="GradientTexture_background"]
+gradient = SubResource("Gradient_background")
+width = 1200
+height = 800
+fill_to = Vector2(1, 1)
+
+[sub_resource type="StyleBoxFlat" id="Style_glow"]
+bg_color = Color(0.95, 0.31, 0.14, 0.08)
+corner_radius_top_left = 260
+corner_radius_top_right = 260
+corner_radius_bottom_right = 260
+corner_radius_bottom_left = 260
+
+[sub_resource type="StyleBoxFlat" id="Style_card"]
+bg_color = Color(0.055, 0.07, 0.105, 0.94)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.82, 0.86, 0.95, 0.14)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+shadow_color = Color(0, 0, 0, 0.42)
+shadow_size = 24
+shadow_offset = Vector2(0, 12)
+
+[sub_resource type="StyleBoxFlat" id="Style_primary_normal"]
+content_margin_left = 24.0
+content_margin_top = 16.0
+content_margin_right = 24.0
+content_margin_bottom = 16.0
+bg_color = Color(0.93, 0.31, 0.12, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="Style_primary_pressed"]
+content_margin_left = 24.0
+content_margin_top = 16.0
+content_margin_right = 24.0
+content_margin_bottom = 16.0
+bg_color = Color(0.72, 0.19, 0.07, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="Style_primary_hover"]
+content_margin_left = 24.0
+content_margin_top = 16.0
+content_margin_right = 24.0
+content_margin_bottom = 16.0
+bg_color = Color(1, 0.4, 0.18, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_color = Color(0.95, 0.25, 0.08, 0.28)
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="Style_primary_focus"]
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.74, 0.58, 0.9)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+expand_margin_left = 3.0
+expand_margin_top = 3.0
+expand_margin_right = 3.0
+expand_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxFlat" id="Style_secondary_normal"]
+content_margin_left = 24.0
+content_margin_top = 15.0
+content_margin_right = 24.0
+content_margin_bottom = 15.0
+bg_color = Color(0.11, 0.13, 0.19, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.75, 0.8, 0.92, 0.16)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="Style_secondary_pressed"]
+content_margin_left = 24.0
+content_margin_top = 15.0
+content_margin_right = 24.0
+content_margin_bottom = 15.0
+bg_color = Color(0.075, 0.085, 0.13, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="Style_secondary_hover"]
+content_margin_left = 24.0
+content_margin_top = 15.0
+content_margin_right = 24.0
+content_margin_bottom = 15.0
+bg_color = Color(0.16, 0.18, 0.25, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.9, 0.92, 1, 0.3)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[node name="MainMenu" type="Control" unique_id=1667677781]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_menu")
 
-[node name="BlackBackground" type="ColorRect" parent="Menu" unique_id=1154650589]
+[node name="Background" type="TextureRect" parent="." unique_id=407759060]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.19607843)
+mouse_filter = 2
+texture = SubResource("GradientTexture_background")
+expand_mode = 1
+stretch_mode = 6
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Menu" unique_id=1868835181]
+[node name="Glow" type="Panel" parent="." unique_id=1214023231]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -400.0
-offset_top = -200.0
-offset_right = 400.0
-offset_bottom = 200.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -390.0
+offset_top = -150.0
+offset_right = 130.0
+offset_bottom = 370.0
+grow_horizontal = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Style_glow")
 
-[node name="Respawn" type="MenuButton" parent="Menu/VBoxContainer" unique_id=1789662331]
-layout_mode = 2
-text = "Respawn"
-
-[node name="Exit" type="MenuButton" parent="Menu/VBoxContainer" unique_id=305709182]
-layout_mode = 2
-text = "Exit"
-
-[node name="Label" type="Label" parent="Menu" unique_id=1284270963]
+[node name="TopLabel" type="Label" parent="." unique_id=1536914013]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
+offset_left = 72.0
+offset_top = 48.0
+offset_right = 420.0
+offset_bottom = 76.0
+theme_override_colors/font_color = Color(0.82, 0.85, 0.94, 0.55)
+theme_override_font_sizes/font_size = 13
+text = "GODOT ACTION RPG  /  ADVENTURE"
+
+[node name="MenuCard" type="PanelContainer" parent="." unique_id=217229405]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(520, 0)
+layout_mode = 1
+anchors_preset = 4
 anchor_top = 0.5
-anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -141.5
-offset_top = -300.0
-offset_right = 141.5
-offset_bottom = -212.0
-grow_horizontal = 2
+offset_left = 72.0
+offset_top = -276.0
+offset_right = 592.0
+offset_bottom = 276.0
 grow_vertical = 2
-text = "You died"
-label_settings = SubResource("LabelSettings_y1u3h")
+theme_override_styles/panel = SubResource("Style_card")
+
+[node name="Margin" type="MarginContainer" parent="MenuCard" unique_id=810827415]
+layout_mode = 2
+theme_override_constants/margin_left = 48
+theme_override_constants/margin_top = 44
+theme_override_constants/margin_right = 48
+theme_override_constants/margin_bottom = 40
+
+[node name="Content" type="VBoxContainer" parent="MenuCard/Margin" unique_id=813654669]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Eyebrow" type="Label" parent="MenuCard/Margin/Content" unique_id=1036895710]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.43, 0.22, 1)
+theme_override_font_sizes/font_size = 14
+text = "A NEW JOURNEY AWAITS"
+
+[node name="Title" type="Label" parent="MenuCard/Margin/Content" unique_id=1466387172]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.96, 0.97, 1, 1)
+theme_override_font_sizes/font_size = 58
+text = "ACTION
+RPG"
+
+[node name="Description" type="Label" parent="MenuCard/Margin/Content" unique_id=848022570]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.72, 0.76, 0.86, 1)
+theme_override_font_sizes/font_size = 17
+text = "Enter the wilds. Grow stronger.
+Return with a story worth telling."
+
+[node name="Spacer" type="Control" parent="MenuCard/Margin/Content" unique_id=1725087276]
+custom_minimum_size = Vector2(0, 18)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="StartButton" type="Button" parent="MenuCard/Margin/Content" unique_id=1473870360]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../QuitButton")
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 0.97, 0.94, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("Style_primary_normal")
+theme_override_styles/pressed = SubResource("Style_primary_pressed")
+theme_override_styles/hover = SubResource("Style_primary_hover")
+theme_override_styles/focus = SubResource("Style_primary_focus")
+text = "BEGIN ADVENTURE"
+
+[node name="QuitButton" type="Button" parent="MenuCard/Margin/Content" unique_id=1769811496]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 58)
+layout_mode = 2
+focus_neighbor_top = NodePath("../StartButton")
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.82, 0.85, 0.92, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 17
+theme_override_styles/normal = SubResource("Style_secondary_normal")
+theme_override_styles/pressed = SubResource("Style_secondary_pressed")
+theme_override_styles/hover = SubResource("Style_secondary_hover")
+theme_override_styles/focus = SubResource("Style_primary_focus")
+text = "QUIT GAME"
+
+[node name="Hint" type="Label" parent="MenuCard/Margin/Content" unique_id=596453024]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.62, 0.66, 0.76, 0.55)
+theme_override_font_sizes/font_size = 13
+text = "WASD TO MOVE  •  ENTER TO SELECT"
 horizontal_alignment = 1

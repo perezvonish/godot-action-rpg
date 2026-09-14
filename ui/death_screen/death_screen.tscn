@@ -1,12 +1,148 @@
 [gd_scene format=3 uid="uid://fg7eitqaf4ui"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_mc3sx"]
-line_spacing = 5.0
-font_size = 64
+[ext_resource type="Script" uid="uid://bh4qdox1ly185" path="res://ui/death_screen/death_screen.gd" id="1_death"]
 
-[node name="DeathScreen" type="CanvasLayer" unique_id=381728359]
+[sub_resource type="Gradient" id="Gradient_overlay"]
+offsets = PackedFloat32Array(0, 0.58, 1)
+colors = PackedColorArray(0.12, 0.015, 0.025, 0.94, 0.025, 0.03, 0.055, 0.96, 0.008, 0.012, 0.025, 0.98)
 
-[node name="Menu" type="Control" parent="." unique_id=1199477131]
+[sub_resource type="GradientTexture2D" id="GradientTexture_overlay"]
+gradient = SubResource("Gradient_overlay")
+width = 1200
+height = 800
+fill_to = Vector2(1, 1)
+
+[sub_resource type="StyleBoxFlat" id="Style_card"]
+bg_color = Color(0.055, 0.06, 0.09, 0.97)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 0.33, 0.3, 0.22)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+shadow_color = Color(0, 0, 0, 0.55)
+shadow_size = 28
+shadow_offset = Vector2(0, 14)
+
+[sub_resource type="StyleBoxFlat" id="Style_badge"]
+content_margin_left = 14.0
+content_margin_top = 7.0
+content_margin_right = 14.0
+content_margin_bottom = 7.0
+bg_color = Color(0.95, 0.18, 0.16, 0.12)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 0.32, 0.28, 0.35)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="Style_primary_normal"]
+content_margin_left = 24.0
+content_margin_top = 16.0
+content_margin_right = 24.0
+content_margin_bottom = 16.0
+bg_color = Color(0.9, 0.2, 0.16, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="Style_primary_pressed"]
+content_margin_left = 24.0
+content_margin_top = 16.0
+content_margin_right = 24.0
+content_margin_bottom = 16.0
+bg_color = Color(0.68, 0.11, 0.1, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="Style_primary_hover"]
+content_margin_left = 24.0
+content_margin_top = 16.0
+content_margin_right = 24.0
+content_margin_bottom = 16.0
+bg_color = Color(1, 0.3, 0.24, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_color = Color(0.95, 0.12, 0.1, 0.3)
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="Style_focus"]
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.72, 0.68, 0.95)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+expand_margin_left = 3.0
+expand_margin_top = 3.0
+expand_margin_right = 3.0
+expand_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxFlat" id="Style_secondary_normal"]
+content_margin_left = 24.0
+content_margin_top = 15.0
+content_margin_right = 24.0
+content_margin_bottom = 15.0
+bg_color = Color(0.11, 0.12, 0.17, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.8, 0.82, 0.9, 0.16)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="Style_secondary_pressed"]
+content_margin_left = 24.0
+content_margin_top = 15.0
+content_margin_right = 24.0
+content_margin_bottom = 15.0
+bg_color = Color(0.07, 0.075, 0.11, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="Style_secondary_hover"]
+content_margin_left = 24.0
+content_margin_top = 15.0
+content_margin_right = 24.0
+content_margin_bottom = 15.0
+bg_color = Color(0.17, 0.18, 0.24, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 0.44, 0.4, 0.3)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[node name="DeathScreen" type="CanvasLayer" unique_id=799335161]
+layer = 100
+script = ExtResource("1_death")
+
+[node name="Overlay" type="Control" parent="." unique_id=1247090011]
+unique_name_in_owner = true
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -14,50 +150,116 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="BlackBackground" type="ColorRect" parent="Menu" unique_id=1639639494]
+[node name="Background" type="TextureRect" parent="Overlay" unique_id=1602885072]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.19607843)
+mouse_filter = 2
+texture = SubResource("GradientTexture_overlay")
+expand_mode = 1
+stretch_mode = 6
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Menu" unique_id=117843223]
+[node name="DeathCard" type="PanelContainer" parent="Overlay" unique_id=1336224626]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(560, 0)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -400.0
-offset_top = -200.0
-offset_right = 400.0
-offset_bottom = 200.0
+offset_left = -280.0
+offset_top = -258.0
+offset_right = 280.0
+offset_bottom = 258.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("Style_card")
 
-[node name="Respawn" type="MenuButton" parent="Menu/VBoxContainer" unique_id=1741340557]
+[node name="Margin" type="MarginContainer" parent="Overlay/DeathCard" unique_id=522098909]
 layout_mode = 2
-text = "Respawn"
+theme_override_constants/margin_left = 48
+theme_override_constants/margin_top = 42
+theme_override_constants/margin_right = 48
+theme_override_constants/margin_bottom = 40
 
-[node name="Exit" type="MenuButton" parent="Menu/VBoxContainer" unique_id=388248389]
+[node name="Content" type="VBoxContainer" parent="Overlay/DeathCard/Margin" unique_id=2016210739]
 layout_mode = 2
-text = "Exit"
+theme_override_constants/separation = 16
+alignment = 1
 
-[node name="Label" type="Label" parent="Menu" unique_id=517020465]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -141.5
-offset_top = -300.0
-offset_right = 141.5
-offset_bottom = -212.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "You died"
-label_settings = SubResource("LabelSettings_mc3sx")
+[node name="Badge" type="PanelContainer" parent="Overlay/DeathCard/Margin/Content" unique_id=53742450]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("Style_badge")
+
+[node name="Text" type="Label" parent="Overlay/DeathCard/Margin/Content/Badge" unique_id=1129059407]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.43, 0.38, 1)
+theme_override_font_sizes/font_size = 13
+text = "RUN ENDED"
+
+[node name="Title" type="Label" parent="Overlay/DeathCard/Margin/Content" unique_id=1442186205]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98, 0.96, 0.97, 1)
+theme_override_font_sizes/font_size = 52
+text = "YOU FELL"
+horizontal_alignment = 1
+
+[node name="Message" type="Label" parent="Overlay/DeathCard/Margin/Content" unique_id=1771823656]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.72, 0.74, 0.82, 1)
+theme_override_font_sizes/font_size = 17
+text = "The wilds claimed this run.
+Rise again, or return to safety."
+horizontal_alignment = 1
+
+[node name="Divider" type="ColorRect" parent="Overlay/DeathCard/Margin/Content" unique_id=1729855773]
+custom_minimum_size = Vector2(0, 1)
+layout_mode = 2
+color = Color(0.9, 0.28, 0.24, 0.2)
+
+[node name="Spacer" type="Control" parent="Overlay/DeathCard/Margin/Content" unique_id=1430837058]
+custom_minimum_size = Vector2(0, 4)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="RespawnButton" type="Button" parent="Overlay/DeathCard/Margin/Content" unique_id=880161685]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../MenuButton")
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 0.97, 0.96, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("Style_primary_normal")
+theme_override_styles/pressed = SubResource("Style_primary_pressed")
+theme_override_styles/hover = SubResource("Style_primary_hover")
+theme_override_styles/focus = SubResource("Style_focus")
+text = "RESPAWN"
+
+[node name="MenuButton" type="Button" parent="Overlay/DeathCard/Margin/Content" unique_id=66137968]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 58)
+layout_mode = 2
+focus_neighbor_top = NodePath("../RespawnButton")
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.82, 0.84, 0.9, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 17
+theme_override_styles/normal = SubResource("Style_secondary_normal")
+theme_override_styles/pressed = SubResource("Style_secondary_pressed")
+theme_override_styles/hover = SubResource("Style_secondary_hover")
+theme_override_styles/focus = SubResource("Style_focus")
+text = "RETURN TO MAIN MENU"
+
+[node name="Hint" type="Label" parent="Overlay/DeathCard/Margin/Content" unique_id=1184301545]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.58, 0.6, 0.68, 0.55)
+theme_override_font_sizes/font_size = 13
+text = "ENTER TO CONFIRM  •  ESC FOR MENU"
 horizontal_alignment = 1

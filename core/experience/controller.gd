@@ -9,11 +9,6 @@ signal experience_changed(experience: int)
 var experience: int = 0
 var level: int = 1
 
-func _input(event: InputEvent) -> void:
-	if Input.is_action_pressed("dev"):
-		add_experience(10)
-
-
 func add_experience(value: int) -> void:
 	experience += value
 	print("curr experience: ", experience)

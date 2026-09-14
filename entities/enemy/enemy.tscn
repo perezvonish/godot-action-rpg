@@ -3,14 +3,7 @@
 [ext_resource type="Script" uid="uid://854h2das5vr4" path="res://entities/enemy/enemy.gd" id="1_dt443"]
 [ext_resource type="Resource" uid="uid://bam1qfr1nxs0x" path="res://entities/enemy/slimes/normal.tres" id="2_4wwj3"]
 [ext_resource type="Script" uid="uid://cna5c61237pwq" path="res://entities/enemy/detection.gd" id="4_ou7j8"]
-
-[sub_resource type="GDScript" id="GDScript_dt443"]
-script/source = "class_name EnemyStats
-extends Node
-
-@onready var health: int = 100;
-@onready var damage: int = 25;
-"
+[ext_resource type="Script" uid="uid://c326nd2kb4eoi" path="res://core/health/health_contoller.gd" id="5_health"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wl1l3"]
 radius = 40.0
@@ -26,8 +19,8 @@ data = ExtResource("2_4wwj3")
 
 [node name="Systems" type="Node" parent="." unique_id=741080997]
 
-[node name="Stats" type="Node" parent="Systems" unique_id=766489927]
-script = SubResource("GDScript_dt443")
+[node name="Health" type="Node" parent="Systems" unique_id=766489927]
+script = ExtResource("5_health")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=36952056]
 shape = SubResource("CircleShape2D_wl1l3")
