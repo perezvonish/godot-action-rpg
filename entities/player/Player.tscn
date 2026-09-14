@@ -5,7 +5,6 @@
 [ext_resource type="Script" uid="uid://c326nd2kb4eoi" path="res://core/health/health_contoller.gd" id="4_4pwj0"]
 [ext_resource type="Script" uid="uid://bngt12xi65vt0" path="res://entities/player/systems/stats.gd" id="4_35c0j"]
 [ext_resource type="Script" uid="uid://df1vu2jtl62c8" path="res://core/experience/controller.gd" id="4_fmb3c"]
-[ext_resource type="PackedScene" uid="uid://bu6ga7f36qpo2" path="res://ui/hud/hud.tscn" id="5_mamfr"]
 [ext_resource type="Script" uid="uid://cwvx3iap67tos" path="res://core/experience/level.gd" id="5_q57vx"]
 [ext_resource type="Texture2D" uid="uid://dv7ltfa0clwaw" path="res://assets/parts.png" id="5_xgtsh"]
 [ext_resource type="Script" uid="uid://dq6fctidiwa8s" path="res://core/experience/config.gd" id="6_ak4un"]
@@ -92,10 +91,6 @@ config = SubResource("Resource_kwk8g")
 [node name="Health" type="Node" parent="Systems" unique_id=200974134]
 script = ExtResource("4_4pwj0")
 maxHealth = 100
-
-[node name="UI" type="Node" parent="." unique_id=1046445956]
-
-[node name="Hud" parent="UI" unique_id=96938389 instance=ExtResource("5_mamfr")]
 
 [node name="Visual" type="Node2D" parent="." unique_id=681747588]
 

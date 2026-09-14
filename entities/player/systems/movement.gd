@@ -12,6 +12,9 @@ func _physics_process(delta: float) -> void:
 		"player_move_down"
 	)
 	
+	#print("direction:", direction)
+	#print("position:", player.global_position)
+	
 	player.velocity = direction * speed
 	#print(player.velocity)
 	

@@ -1,5 +1,5 @@
 class_name UiHud
-extends Node
+extends CanvasLayer
 
 @onready var healthProgressBar: ProgressBar = $Health/ProgressBar
 
