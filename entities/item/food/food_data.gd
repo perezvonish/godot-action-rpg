@@ -1,7 +1,7 @@
 class_name FoodItem
 extends ItemData
 
-@export var health_restore: int
+@export_range(0, 100) var health_restore: int
 
 signal food_consumed(food: FoodItem)
 

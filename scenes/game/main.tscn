@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://d0gcm6pcmv3ar" path="res://entities/enemy/enemy.tscn" id="2_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://dsjboivbr4ghe" path="res://entities/item/item.tscn" id="3_jyhfs"]
 [ext_resource type="Resource" uid="uid://cdtko8ypvokdh" path="res://entities/item/food/apple.tres" id="4_tbgi4"]
+[ext_resource type="Resource" uid="uid://dvbph6gtdwbn0" path="res://entities/item/food/bread.tres" id="4_uaf1y"]
 
 [node name="Game" type="Node2D" unique_id=1707446834]
 
@@ -21,3 +22,9 @@ position = Vector2(405, 97)
 [node name="Item" parent="." unique_id=1085552623 instance=ExtResource("3_jyhfs")]
 position = Vector2(916, 366)
 data = ExtResource("4_tbgi4")
+quantity = 15
+
+[node name="Item2" parent="." unique_id=1000971890 instance=ExtResource("3_jyhfs")]
+position = Vector2(696, 536)
+data = ExtResource("4_uaf1y")
+quantity = 15

@@ -10,6 +10,10 @@
 [ext_resource type="Script" uid="uid://dq6fctidiwa8s" path="res://core/experience/config.gd" id="6_ak4un"]
 [ext_resource type="Script" uid="uid://cmiqga4quxuij" path="res://entities/player/systems/debug_input.gd" id="7_debug"]
 [ext_resource type="Script" uid="uid://by0uos2w6vuns" path="res://core/inventory/inventory_controller.gd" id="8_inventory"]
+[ext_resource type="Script" path="res://entities/player/systems/nearby_items.gd" id="9_nearby"]
+
+[sub_resource type="CircleShape2D" id="NearbyShape"]
+radius = 64.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_glu7e"]
 size = Vector2(32, 68)
@@ -97,6 +101,15 @@ max_health = 100
 
 [node name="Inventory" type="Node" parent="Systems" unique_id=546847205]
 script = ExtResource("8_inventory")
+
+[node name="NearbyItems" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+monitorable = false
+script = ExtResource("9_nearby")
+
+[node name="Shape" type="CollisionShape2D" parent="NearbyItems"]
+shape = SubResource("NearbyShape")
 
 [node name="Visual" type="Node2D" parent="." unique_id=681747588]
 

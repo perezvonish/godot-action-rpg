@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="FoodItem" format=3 uid="uid://dvbph6gtdwbn0"]
+
+[ext_resource type="Script" uid="uid://dhv6qm0vu3w3n" path="res://entities/item/food/food_data.gd" id="1_a7aaw"]
+[ext_resource type="Texture2D" uid="uid://cqh6wnxlgigb0" path="res://assets/food.png" id="2_rsaae"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v3mhr"]
+atlas = ExtResource("2_rsaae")
+region = Rect2(180.13626, 772.4364, 103.75247, 107.70245)
+
+[resource]
+script = ExtResource("1_a7aaw")
+health_restore = 5
+title = "Bread"
+description = "Baked with love"
+stack_size = 4
+texture = SubResource("AtlasTexture_v3mhr")
+metadata/_custom_type_script = "uid://dhv6qm0vu3w3n"

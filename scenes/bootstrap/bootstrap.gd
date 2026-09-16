@@ -1,6 +1,7 @@
 extends Node2D
 
 const MENU_SCENE := "res://scenes/menu/menu.tscn"
+const ItemTransferController = preload("res://core/inventory/item_transfer_controller.gd")
 
 @export var game_scene: PackedScene
 @export var player_scene: PackedScene
@@ -27,6 +28,7 @@ func _ready() -> void:
 	add_child(death_screen)
 	add_child(player_menu)
 	player_menu.bind_inventory(player.inventory_controller)
+	player_menu.inventory_tab.bind_transfers(ItemTransferController.new(player.inventory_controller, player.get_node("NearbyItems"), game))
 	player_menu.closed.connect(_on_player_menu_closed)
 
 	var player_spawn := game.get_node("PlayerSpawn") as Marker2D

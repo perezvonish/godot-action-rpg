@@ -1,16 +1,7 @@
 [gd_scene format=3 uid="uid://bu6ga7f36qpo2"]
 
 [ext_resource type="Script" uid="uid://dt3mkhq8tmqhe" path="res://ui/hud/hud.gd" id="1_0mwgc"]
-
-[sub_resource type="GDScript" id="GDScript_xmswo"]
-script/source = "class_name HudHealth
-extends Node
-
-@onready var progressBar: ProgressBar = $ProgressBar
-
-func update(value: int) -> void:
-	progressBar.value = value
-"
+[ext_resource type="Script" uid="uid://oh8wo46xoyev" path="res://ui/hud/health.gd" id="2_4d6w6"]
 
 [node name="Hud" type="CanvasLayer" unique_id=96938389]
 script = ExtResource("1_0mwgc")
@@ -23,7 +14,7 @@ anchor_bottom = 1.0
 offset_top = -200.0
 offset_right = 200.0
 grow_vertical = 0
-script = SubResource("GDScript_xmswo")
+script = ExtResource("2_4d6w6")
 
 [node name="ProgressBar" type="ProgressBar" parent="Health" unique_id=71149322]
 layout_mode = 1

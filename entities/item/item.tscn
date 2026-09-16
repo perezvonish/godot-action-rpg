@@ -2,7 +2,18 @@
 
 [ext_resource type="Script" uid="uid://btknhv11mrpsl" path="res://entities/item/item.gd" id="1_f61xm"]
 
+[sub_resource type="CircleShape2D" id="DetectionShape"]
+radius = 8.0
+
 [node name="Item" type="Node2D" unique_id=1085552623]
 script = ExtResource("1_f61xm")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1304122191]
+
+[node name="Detection" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 0
+monitoring = false
+
+[node name="Shape" type="CollisionShape2D" parent="Detection"]
+shape = SubResource("DetectionShape")
