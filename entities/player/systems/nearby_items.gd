@@ -10,7 +10,7 @@ var items: Array[WorldItem] = []
 func contains(item: Variant) -> bool:
 	if not is_instance_valid(item) or not item is WorldItem or item.is_queued_for_deletion() or item.quantity <= 0:
 		return false
-	var radius: float = $Shape.shape.radius * global_scale.x
+a	var radius: float = $Shape.shape.radius * global_scale.x
 	return item.data != null and item.is_inside_tree() and global_position.distance_to(item.global_position) <= radius
 
 
