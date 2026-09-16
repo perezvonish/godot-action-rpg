@@ -2,8 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://bffklrloxur8d" path="res://core/tile_sets/global_world.tres" id="1_matif"]
 
-[node name="Base" type="TileMap" unique_id=1845705202]
-format = 2
+[node name="Base" type="Node2D" unique_id=1769250358]
 
 [node name="Floor" type="TileMapLayer" parent="." unique_id=1405958888]
 tile_set = ExtResource("1_matif")
