@@ -50,6 +50,7 @@ position = Vector2(0, 5.25)
 shape = SubResource("RectangleShape2D_glu7e")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=824388177]
+zoom = Vector2(2, 2)
 
 [node name="Systems" type="Node" parent="." unique_id=1497189512]
 
@@ -83,7 +84,7 @@ script = ExtResource("9_nearby")
 position = Vector2(0, 4.5)
 shape = SubResource("RectangleShape2D_g4v7s")
 
-[node name="Visual" type="Node2D" parent="." node_paths=PackedStringArray("animatedSprites") unique_id=681747588]
+[node name="Visual" type="Node2D" parent="." unique_id=681747588 node_paths=PackedStringArray("animatedSprites")]
 script = ExtResource("11_2rv2u")
 animatedSprites = NodePath("AnimatedSprite2D")
 

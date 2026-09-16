@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://dyv0ncpqj5wx"]
 
 [ext_resource type="TileSet" uid="uid://bffklrloxur8d" path="res://core/tile_sets/global_world.tres" id="1_rqr7f"]
+[ext_resource type="PackedScene" uid="uid://v3c46ijwtxym" path="res://entities/player/Player.tscn" id="2_0fcu2"]
 
 [node name="TileMapLayer" type="TileMap" unique_id=524916643]
 tile_set = ExtResource("1_rqr7f")
@@ -13,3 +14,6 @@ tile_set = ExtResource("1_rqr7f")
 [node name="Furniture" type="TileMapLayer" parent="." unique_id=2035442995]
 tile_map_data = PackedByteArray("AAAKAAgABAAAAAIAAAATAAsABAAAAAIAAAAXAAUABAAAAAIAAAAQABIABAACAAQAAAATABIABAACAAQAAAAWABIABAACAAQAAAAIABIABAACAAQAAAAXABIABAAHAAcAAAA=")
 tile_set = ExtResource("1_rqr7f")
+
+[node name="Player" parent="." unique_id=1262160129 instance=ExtResource("2_0fcu2")]
+position = Vector2(238, 404)
