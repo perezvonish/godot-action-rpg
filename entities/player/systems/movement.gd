@@ -1,5 +1,7 @@
 extends Node
 
+signal movement_updated(movement: Vector2)
+
 @export var speed := 300.0
 
 @onready var player: Player = owner as Player
@@ -11,6 +13,7 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 	if not player.input_enabled:
 		player.velocity = Vector2.ZERO
+		movement_updated.emit(Vector2.ZERO)
 		return
 	var direction := Input.get_vector(
 		"player_move_left",
@@ -21,3 +24,4 @@ func _physics_process(_delta: float) -> void:
 
 	player.velocity = direction * speed
 	player.move_and_slide()
+	movement_updated.emit(direction)
