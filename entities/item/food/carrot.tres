@@ -9,6 +9,7 @@ region = Rect2(17, 145, 14, 14)
 
 [resource]
 script = ExtResource("1_a8lkk")
+health_restore = 2
 id = "item_food_carrot"
 title = "Carrot"
 description = "Cccc"
