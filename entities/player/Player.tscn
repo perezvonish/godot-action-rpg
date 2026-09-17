@@ -43,14 +43,13 @@ metadata/_custom_type_script = "uid://dq6fctidiwa8s"
 radius = 16.0
 
 [node name="Player" type="CharacterBody2D" unique_id=1262160129]
-scale = Vector2(2, 2)
 script = ExtResource("1_glu7e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=655718684]
 shape = SubResource("RectangleShape2D_glu7e")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=824388177]
-zoom = Vector2(2, 2)
+zoom = Vector2(3, 3)
 
 [node name="Systems" type="Node" parent="." unique_id=1497189512]
 
