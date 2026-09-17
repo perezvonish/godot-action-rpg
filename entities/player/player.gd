@@ -1,13 +1,12 @@
 class_name Player
 extends CharacterBody2D
 
-#const InventoryController = preload("res://core/inventory/inventory_controller.gd")
+@export var inventory_controller: InventoryController
 
 @onready var stats: PlayerStats = $Systems/Stats
 @onready var health_controller: HealthController = $Systems/Health
 @onready var experience_controller: ExperienceController = $Systems/Experience
 @onready var debug_input: Node = $Systems/DebugInput
-#@onready var inventory_controller: InventoryController = $Systems/Inventory
 @onready var visual: PlayerVisual = $Visual
 @onready var movement = $Systems/Movement
 

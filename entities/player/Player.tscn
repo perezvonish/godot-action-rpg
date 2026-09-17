@@ -42,8 +42,9 @@ metadata/_custom_type_script = "uid://dq6fctidiwa8s"
 [sub_resource type="CircleShape2D" id="CircleShape2D_mq27t"]
 radius = 16.0
 
-[node name="Player" type="CharacterBody2D" unique_id=1262160129]
+[node name="Player" type="CharacterBody2D" unique_id=1262160129 node_paths=PackedStringArray("inventory_controller")]
 script = ExtResource("1_glu7e")
+inventory_controller = NodePath("Systems/Inventory/Controller")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=655718684]
 shape = SubResource("RectangleShape2D_glu7e")

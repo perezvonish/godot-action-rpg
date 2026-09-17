@@ -1,6 +1,8 @@
 [gd_scene format=4 uid="uid://cld28u7xyvjsx"]
 
 [ext_resource type="PackedScene" uid="uid://ighn02jwjn53" path="res://scenes/game/base.tscn" id="1_6wx0u"]
+[ext_resource type="PackedScene" uid="uid://dsjboivbr4ghe" path="res://entities/item/item.tscn" id="2_ps3c6"]
+[ext_resource type="Resource" uid="uid://dvbph6gtdwbn0" path="res://entities/item/food/bread.tres" id="3_g48ia"]
 
 [node name="Base" unique_id=1769250358 instance=ExtResource("1_6wx0u")]
 
@@ -12,3 +14,7 @@ tile_map_data = PackedByteArray("AAANAAgABAAAAAIAAAAQAAgABAAAAAIAAAATAAgABAAAAAI
 
 [node name="PlayerSpawner" parent="Objects" parent_id_path=PackedInt32Array(1595756080) index="1" unique_id=2075905862]
 position = Vector2(311, 215)
+
+[node name="WorldItem" parent="Objects" parent_id_path=PackedInt32Array(1595756080) index="2" unique_id=1085552623 instance=ExtResource("2_ps3c6")]
+position = Vector2(403, 173)
+data = ExtResource("3_g48ia")

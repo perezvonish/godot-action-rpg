@@ -36,6 +36,7 @@ func _on_game_start_requested():
 	game = game_scene.instantiate()
 	player = player_scene.instantiate()
 	hud = hud_scene.instantiate()
+	player_menu = player_menu_scene.instantiate()
 	death_screen = death_screen_scene.instantiate()
 	death_screen.hide()
 
@@ -44,14 +45,13 @@ func _on_game_start_requested():
 	var player_spawn := objects.get_node("PlayerSpawner") as Marker2D
 	player.position = player_spawn.position
 	objects.add_child(player)
-#	add_child(player_menu)
+	add_child(player_menu)
+	player_menu.bind_inventory(player.inventory_controller)
+	player_menu.closed.connect(_on_player_menu_closed)
 	add_child(hud)
 	hud.bind_health(player.health_controller)
 	add_child(death_screen)
 
-#	player_menu.bind_inventory(player.inventory_controller)
-#	player_menu.inventory_tab.bind_transfers(ItemTransferController.new(player.inventory_controller, player.get_node("NearbyItems"), game))
-#	player_menu.closed.connect(_on_player_menu_closed)
 #
 #	death_screen.process_mode = Node.PROCESS_MODE_WHEN_PAUSED
 #	player.died.connect(_on_player_died)
@@ -66,23 +66,23 @@ func _on_game_start_requested():
 #	get_tree().paused = true
 #
 #
-#func _input(event: InputEvent) -> void:
-#	if get_tree().paused:
-#		return
-#	if event.is_action_pressed("toggle_player_menu"):
-#		if player_menu.visible:
-#			player_menu.close()
-#		else:
-#			player.set_input_enabled(false)
-#			player_menu.open()
-#		get_viewport().set_input_as_handled()
-#	elif player_menu.visible and event.is_action_pressed("ui_cancel"):
-#		player_menu.close()
-#		get_viewport().set_input_as_handled()
+func _input(event: InputEvent) -> void:
+	if get_tree().paused or player_menu == null:
+		return
+	if event.is_action_pressed("toggle_player_menu"):
+		if player_menu.visible:
+			player_menu.close()
+		else:
+			player.set_input_enabled(false)
+			player_menu.open()
+		get_viewport().set_input_as_handled()
+	elif player_menu.visible and event.is_action_pressed("ui_cancel"):
+		player_menu.close()
+		get_viewport().set_input_as_handled()
 #
 #
-#func _on_player_menu_closed() -> void:
-#	player.set_input_enabled(true)
+func _on_player_menu_closed() -> void:
+	player.set_input_enabled(true)
 #
 #
 #func _on_respawn_requested() -> void:
