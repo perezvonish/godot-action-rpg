@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="FoodItem" format=3 uid="uid://4px55le5tkwl"]
+
+[ext_resource type="Script" uid="uid://dhv6qm0vu3w3n" path="res://entities/item/food/food_data.gd" id="1_a8lkk"]
+[ext_resource type="Texture2D" uid="uid://cqh6wnxlgigb0" path="res://assets/food.png" id="2_1reep"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q1wfc"]
+atlas = ExtResource("2_1reep")
+region = Rect2(17, 145, 14, 14)
+
+[resource]
+script = ExtResource("1_a8lkk")
+id = "item_food_carrot"
+title = "Carrot"
+description = "Cccc"
+max_stack_quantity = 8
+texture = SubResource("AtlasTexture_q1wfc")
+metadata/_custom_type_script = "uid://dhv6qm0vu3w3n"

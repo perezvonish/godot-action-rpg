@@ -1,9 +1,14 @@
+@tool
 class_name WorldItem
 extends Node2D
 
 signal changed
 
-@export var data: ItemData
+@export var data: ItemData:
+	set(value):
+		data = value
+		if Engine.is_editor_hint() and is_node_ready():
+			_update_visual()
 @export_range(1, 9999) var quantity: int
 
 var item: Item:
@@ -18,12 +23,20 @@ var item: Item:
 
 
 func _ready() -> void:
+	if Engine.is_editor_hint():
+		_update_visual()
+		return
+
 	if item == null:
 		item = Item.new(data, quantity)
 	_update_visual()
 
 
 func _update_visual() -> void:
+	if Engine.is_editor_hint():
+		$Sprite2D.texture = data.texture if data != null else null
+		return
+
 	$Sprite2D.texture = item.data.texture if item != null and item.data != null else null
 
 

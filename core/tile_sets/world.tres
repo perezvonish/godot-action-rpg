@@ -1,12 +1,12 @@
 [gd_resource type="TileSet" format=3 uid="uid://bffklrloxur8d"]
 
-[ext_resource type="Texture2D" uid="uid://bihik533bhcgx" path="res://assets/pack1/TX Tileset Grass.png" id="1_l780d"]
-[ext_resource type="Texture2D" uid="uid://bwotid0dh4tc7" path="res://assets/pack1/TX Tileset Stone Ground.png" id="2_c37r1"]
-[ext_resource type="Texture2D" uid="uid://la38tglvfdki" path="res://assets/pack1/TX Tileset Wall.png" id="3_fhhi1"]
-[ext_resource type="Texture2D" uid="uid://dbrbbfsstpff" path="res://assets/furniture/furniture.png" id="4_tjjtw"]
+[ext_resource type="Texture2D" uid="uid://bihik533bhcgx" path="res://assets/pack1/TX Tileset Grass.png" id="1_a0rv5"]
+[ext_resource type="Texture2D" uid="uid://bwotid0dh4tc7" path="res://assets/pack1/TX Tileset Stone Ground.png" id="2_op006"]
+[ext_resource type="Texture2D" uid="uid://la38tglvfdki" path="res://assets/pack1/TX Tileset Wall.png" id="3_31avw"]
+[ext_resource type="Texture2D" uid="uid://dbrbbfsstpff" path="res://assets/furniture/furniture.png" id="4_uwus6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dkdj6"]
-texture = ExtResource("1_l780d")
+texture = ExtResource("1_a0rv5")
 0:0/0 = 0
 0:0/0/terrain_set = 0
 0:0/0/terrain = 0
@@ -834,7 +834,7 @@ texture = ExtResource("1_l780d")
 15:15/0/custom_data_0 = 1
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ogfbj"]
-texture = ExtResource("2_c37r1")
+texture = ExtResource("2_op006")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -1037,7 +1037,7 @@ texture = ExtResource("2_c37r1")
 15:15/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e3cod"]
-texture = ExtResource("3_fhhi1")
+texture = ExtResource("3_31avw")
 2:2/0 = 0
 3:2/0 = 0
 4:2/0 = 0
@@ -1232,7 +1232,7 @@ texture = ExtResource("3_fhhi1")
 11:21/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gcekk"]
-texture = ExtResource("4_tjjtw")
+texture = ExtResource("4_uwus6")
 0:0/size_in_atlas = Vector2i(2, 2)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-10.200917, -11.060545, 10.332151, -11.094928, 9.985435, 12.135077, -10.086299, 12.034789)
@@ -1280,7 +1280,7 @@ terrain_set_0/terrain_1/name = "Stone"
 terrain_set_0/terrain_1/color = Color(0.664498, 0.47566164, 1.92523e-07, 1)
 custom_data_layer_0/name = "heal_per_second"
 custom_data_layer_0/type = 2
-sources/0 = SubResource("TileSetAtlasSource_dkdj6")
-sources/1 = SubResource("TileSetAtlasSource_ogfbj")
 sources/2 = SubResource("TileSetAtlasSource_e3cod")
+sources/1 = SubResource("TileSetAtlasSource_ogfbj")
+sources/0 = SubResource("TileSetAtlasSource_dkdj6")
 sources/4 = SubResource("TileSetAtlasSource_gcekk")

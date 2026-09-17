@@ -3,6 +3,8 @@
 [ext_resource type="TileSet" uid="uid://bffklrloxur8d" path="res://core/tile_sets/world.tres" id="1_rqr7f"]
 [ext_resource type="PackedScene" uid="uid://v3c46ijwtxym" path="res://entities/player/Player.tscn" id="2_0fcu2"]
 [ext_resource type="TileSet" uid="uid://dd5tcp3flvsgj" path="res://core/tile_sets/food.tres" id="3_3fvjq"]
+[ext_resource type="PackedScene" uid="uid://dsjboivbr4ghe" path="res://entities/item/item.tscn" id="4_gcekk"]
+[ext_resource type="Resource" uid="uid://dvbph6gtdwbn0" path="res://entities/item/food/bread.tres" id="5_dkdj6"]
 
 [node name="TileMapLayer" type="TileMap" unique_id=524916643]
 tile_set = ExtResource("1_rqr7f")
@@ -22,3 +24,7 @@ position = Vector2(276, 393)
 [node name="Furniture" type="TileMapLayer" parent="." unique_id=2035442995]
 tile_map_data = PackedByteArray("AAAKAAgABAAAAAIAAAATAAsABAAAAAIAAAAXAAUABAAAAAIAAAAQABIABAACAAQAAAATABIABAACAAQAAAAIABIABAACAAQAAAAWABIABAACAAQAAAA=")
 tile_set = ExtResource("1_rqr7f")
+
+[node name="WorldItem" parent="." unique_id=1085552623 instance=ExtResource("4_gcekk")]
+position = Vector2(213, 415)
+data = ExtResource("5_dkdj6")

@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://ighn02jwjn53"]
+
+[ext_resource type="TileSet" uid="uid://bffklrloxur8d" path="res://core/tile_sets/world.tres" id="1_bvifh"]
+
+[node name="Base" type="Node2D" unique_id=1769250358]
+
+[node name="Floor" type="TileMapLayer" parent="." unique_id=1405958888]
+tile_set = ExtResource("1_bvifh")
+
+[node name="GroundDecoration" type="TileMapLayer" parent="." unique_id=685996761]
+tile_set = ExtResource("1_bvifh")
+
+[node name="Objects" type="TileMapLayer" parent="." unique_id=1595756080]
+tile_set = ExtResource("1_bvifh")
+
+[node name="Furniture" type="TileMapLayer" parent="Objects" unique_id=1877405392]
+tile_set = ExtResource("1_bvifh")
+
+[node name="PlayerSpawner" type="Marker2D" parent="Objects" unique_id=2075905862]
