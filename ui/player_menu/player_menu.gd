@@ -1,11 +1,9 @@
 class_name PlayerMenu
 extends CanvasLayer
 
-const InventoryController = preload("res://core/inventory/inventory_controller.gd")
-
 signal closed
 
-@onready var inventory_tab: InventoryTab = %InventoryTab
+#@onready var inventory_tab: InventoryTab = %InventoryTab
 
 
 func _ready() -> void:
@@ -14,12 +12,13 @@ func _ready() -> void:
 
 
 func bind_inventory(inventory: InventoryController) -> void:
-	inventory_tab.bind_inventory(inventory)
+	return
+#	inventory_tab.bind_inventory(inventory)
 
 
 func open() -> void:
-	if inventory_tab.transfers != null:
-		inventory_tab.transfers.set_active(true)
+#	if inventory_tab.transfers != null:
+#		inventory_tab.transfers.set_active(true)
 	show()
 	%CloseButton.grab_focus()
 
@@ -27,8 +26,8 @@ func open() -> void:
 func close() -> void:
 	if not visible:
 		return
-	if inventory_tab.transfers != null:
-		inventory_tab.transfers.set_active(false)
+#	if inventory_tab.transfers != null:
+#		inventory_tab.transfers.set_active(false)
 	get_viewport().gui_cancel_drag()
 	var focused := get_viewport().gui_get_focus_owner()
 	if focused != null:

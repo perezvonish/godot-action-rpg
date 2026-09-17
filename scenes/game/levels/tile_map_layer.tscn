@@ -17,8 +17,8 @@ tile_map_data = PackedByteArray("AAAFABgAAwAHAAkAAAAGABgAAwAHAAkAAAAHABgAAwAHAAk
 tile_set = ExtResource("3_3fvjq")
 
 [node name="Player" parent="." unique_id=1262160129 instance=ExtResource("2_0fcu2")]
-position = Vector2(251, 377)
+position = Vector2(276, 393)
 
 [node name="Furniture" type="TileMapLayer" parent="." unique_id=2035442995]
-tile_map_data = PackedByteArray("AAAKAAgABAAAAAIAAAATAAsABAAAAAIAAAAXAAUABAAAAAIAAAAQABIABAACAAQAAAATABIABAACAAQAAAAWABIABAACAAQAAAAIABIABAACAAQAAAAXABIABAAHAAcAAAA=")
+tile_map_data = PackedByteArray("AAAKAAgABAAAAAIAAAATAAsABAAAAAIAAAAXAAUABAAAAAIAAAAQABIABAACAAQAAAATABIABAACAAQAAAAIABIABAACAAQAAAAWABIABAACAAQAAAA=")
 tile_set = ExtResource("1_rqr7f")

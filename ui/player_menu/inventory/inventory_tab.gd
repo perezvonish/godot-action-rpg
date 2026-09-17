@@ -1,7 +1,6 @@
 class_name InventoryTab
 extends MarginContainer
 
-const InventoryController = preload("res://core/inventory/inventory_controller.gd")
 const TransferController = preload("res://core/inventory/item_transfer_controller.gd")
 const WorldItem = preload("res://entities/item/world_item.gd")
 const SLOT_SCENE = preload("res://ui/player_menu/inventory/inventory_cell.tscn")
