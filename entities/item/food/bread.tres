@@ -12,6 +12,6 @@ script = ExtResource("1_a7aaw")
 health_restore = 5
 title = "Bread"
 description = "Baked with love"
-stack_size = 4
+max_stack_quantity = 4
 texture = SubResource("AtlasTexture_v3mhr")
 metadata/_custom_type_script = "uid://dhv6qm0vu3w3n"

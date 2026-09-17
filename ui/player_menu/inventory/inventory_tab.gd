@@ -3,7 +3,7 @@ extends MarginContainer
 
 const InventoryController = preload("res://core/inventory/inventory_controller.gd")
 const TransferController = preload("res://core/inventory/item_transfer_controller.gd")
-const WorldItem = preload("res://entities/item/item.gd")
+const WorldItem = preload("res://entities/item/world_item.gd")
 const SLOT_SCENE = preload("res://ui/player_menu/inventory/inventory_cell.tscn")
 
 var inventory: InventoryController
@@ -49,7 +49,7 @@ func _refresh() -> void:
 	var occupied := 0
 	for index in cells.size():
 		var slot := inventory.slots[index]
-		_fill_cell(cells[index], slot.item_data if slot != null else null, slot.quantity if slot != null else 0)
+		_fill_cell(cells[index], slot.currentItem.data if slot != null else null, slot.currentItem.quantity if slot != null else 0)
 		if slot != null:
 			occupied += 1
 	%Capacity.text = "%d / %d ячеек" % [occupied, inventory.slots.size()]
@@ -84,7 +84,7 @@ func _refresh_environment() -> void:
 		var cell := SLOT_SCENE.instantiate() as Button
 		#cell.button_group = group
 		%EnvironmentGrid.add_child(cell)
-		_fill_cell(cell, item.data, item.quantity)
+		_fill_cell(cell, item.item.data, item.item.quantity)
 		cell.set_pressed_no_signal(item == selected_world)
 		cell.pressed.connect(_select_world.bind(item))
 		cell.set_drag_forwarding(_drag_world.bind(item, cell), _can_drop.bind({"kind": "world", "item": item}), _drop.bind({"kind": "world", "item": item}))
@@ -164,12 +164,12 @@ func _show_details() -> void:
 	var data: ItemData
 	var quantity := 0
 	if selected_index >= 0 and inventory.slots[selected_index] != null:
-		data = inventory.slots[selected_index].item_data
-		quantity = inventory.slots[selected_index].quantity
+		data = inventory.slots[selected_index].currentItem.data
+		quantity = inventory.slots[selected_index].currentItem.quantity
 	elif is_instance_valid(selected_world) and transfers != null and transfers.nearby.contains(selected_world):
-		data = selected_world.data
-		quantity = selected_world.quantity
+		data = selected_world.item.data
+		quantity = selected_world.item.quantity
 	%ItemIcon.texture = data.texture if data != null else null
 	%ItemTitle.text = data.title if data != null else "Выберите предмет"
 	%ItemDescription.text = data.description if data != null else "Перетаскивайте предметы между инвентарём и окружением."
-	%ItemQuantity.text = "В стопке: %d / %d" % [quantity, maxi(1, data.stack_size)] if data != null else ""
+	%ItemQuantity.text = "В стопке: %d / %d" % [quantity, maxi(1, data.max_stack_quantity)] if data != null else ""

@@ -8,13 +8,14 @@
 [ext_resource type="Script" uid="uid://cwvx3iap67tos" path="res://core/experience/level.gd" id="5_q57vx"]
 [ext_resource type="Script" uid="uid://dq6fctidiwa8s" path="res://core/experience/config.gd" id="6_ak4un"]
 [ext_resource type="Script" uid="uid://cmiqga4quxuij" path="res://entities/player/systems/debug_input.gd" id="7_debug"]
-[ext_resource type="Script" uid="uid://by0uos2w6vuns" path="res://core/inventory/inventory_controller.gd" id="8_inventory"]
+[ext_resource type="Script" uid="uid://b1ghgjkg38f44" path="res://core/inventory/controller.gd" id="9_2rv2u"]
 [ext_resource type="Script" uid="uid://baup7qo6ss0cn" path="res://entities/player/systems/nearby_items.gd" id="9_nearby"]
+[ext_resource type="Resource" uid="uid://c35ab551p7lp3" path="res://entities/player/systems/inventory_data.tres" id="10_mq27t"]
 [ext_resource type="SpriteFrames" uid="uid://coynhw4u0p10y" path="res://entities/player/animations/man.tres" id="11_1ms0h"]
 [ext_resource type="Script" uid="uid://cyykofn8l5pxi" path="res://entities/player/systems/visual.gd" id="11_2rv2u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_glu7e"]
-size = Vector2(16, 21.5)
+size = Vector2(16, 20)
 
 [sub_resource type="Resource" id="Resource_1ms0h"]
 script = ExtResource("5_q57vx")
@@ -38,15 +39,14 @@ script = ExtResource("6_ak4un")
 levels = Array[ExtResource("5_q57vx")]([SubResource("Resource_1ms0h"), SubResource("Resource_2rv2u"), SubResource("Resource_mq27t")])
 metadata/_custom_type_script = "uid://dq6fctidiwa8s"
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
-size = Vector2(16, 16)
+[sub_resource type="CircleShape2D" id="CircleShape2D_mq27t"]
+radius = 16.0
 
 [node name="Player" type="CharacterBody2D" unique_id=1262160129]
 scale = Vector2(2, 2)
 script = ExtResource("1_glu7e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=655718684]
-position = Vector2(0, 5.25)
 shape = SubResource("RectangleShape2D_glu7e")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=824388177]
@@ -72,7 +72,21 @@ script = ExtResource("4_4pwj0")
 max_health = 100
 
 [node name="Inventory" type="Node" parent="Systems" unique_id=546847205]
-script = ExtResource("8_inventory")
+
+[node name="Controller" type="Node" parent="Systems/Inventory" unique_id=788731358]
+script = ExtResource("9_2rv2u")
+data = ExtResource("10_mq27t")
+
+[node name="TransferController" type="Node" parent="Systems/Inventory" unique_id=815716197]
+
+[node name="Visual" type="Node2D" parent="." unique_id=681747588 node_paths=PackedStringArray("animatedSprites")]
+position = Vector2(0, -6)
+script = ExtResource("11_2rv2u")
+animatedSprites = NodePath("AnimatedSprite2D")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Visual" unique_id=1629240232]
+sprite_frames = ExtResource("11_1ms0h")
+animation = &"stay_front"
 
 [node name="NearbyItems" type="Area2D" parent="." unique_id=1719156600]
 collision_layer = 0
@@ -81,14 +95,4 @@ monitorable = false
 script = ExtResource("9_nearby")
 
 [node name="Shape" type="CollisionShape2D" parent="NearbyItems" unique_id=2025651172]
-position = Vector2(0, 4.5)
-shape = SubResource("RectangleShape2D_g4v7s")
-
-[node name="Visual" type="Node2D" parent="." unique_id=681747588 node_paths=PackedStringArray("animatedSprites")]
-script = ExtResource("11_2rv2u")
-animatedSprites = NodePath("AnimatedSprite2D")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Visual" unique_id=1629240232]
-sprite_frames = ExtResource("11_1ms0h")
-animation = &"stay_right"
-frame_progress = 0.9709375
+shape = SubResource("CircleShape2D_mq27t")

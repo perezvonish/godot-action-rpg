@@ -1,19 +1,19 @@
 [gd_scene format=3 uid="uid://dsjboivbr4ghe"]
 
-[ext_resource type="Script" uid="uid://btknhv11mrpsl" path="res://entities/item/item.gd" id="1_f61xm"]
+[ext_resource type="Script" uid="uid://b20kih71ol0gi" path="res://entities/item/world_item.gd" id="1_f61xm"]
 
 [sub_resource type="CircleShape2D" id="DetectionShape"]
 radius = 8.0
 
-[node name="Item" type="Node2D" unique_id=1085552623]
+[node name="WorldItem" type="Node2D" unique_id=1085552623]
 script = ExtResource("1_f61xm")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1304122191]
 
-[node name="Detection" type="Area2D" parent="."]
+[node name="Detection" type="Area2D" parent="." unique_id=464991118]
 collision_layer = 4
 collision_mask = 0
 monitoring = false
 
-[node name="Shape" type="CollisionShape2D" parent="Detection"]
+[node name="Shape" type="CollisionShape2D" parent="Detection" unique_id=669582490]
 shape = SubResource("DetectionShape")

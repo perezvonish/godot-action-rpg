@@ -12,6 +12,6 @@ script = ExtResource("1_5gdol")
 health_restore = 1
 title = "Apple"
 description = "Tasty apple"
-stack_size = 24
+max_stack_quantity = 24
 texture = SubResource("AtlasTexture_af78h")
 metadata/_custom_type_script = "uid://dhv6qm0vu3w3n"

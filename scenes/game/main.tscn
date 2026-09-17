@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dsjboivbr4ghe" path="res://entities/item/item.tscn" id="3_jyhfs"]
 [ext_resource type="Resource" uid="uid://cdtko8ypvokdh" path="res://entities/item/food/apple.tres" id="4_tbgi4"]
 [ext_resource type="Resource" uid="uid://dvbph6gtdwbn0" path="res://entities/item/food/bread.tres" id="4_uaf1y"]
+[ext_resource type="PackedScene" uid="uid://v3c46ijwtxym" path="res://entities/player/Player.tscn" id="5_iba00"]
 
 [node name="Game" type="Node2D" unique_id=1707446834]
 
@@ -28,3 +29,6 @@ quantity = 15
 position = Vector2(696, 536)
 data = ExtResource("4_uaf1y")
 quantity = 15
+
+[node name="Player" parent="." unique_id=1262160129 instance=ExtResource("5_iba00")]
+position = Vector2(420, 600)
