@@ -2,7 +2,7 @@ extends Node
 
 signal movement_updated(movement: Vector2)
 
-@export var speed := 300.0
+@export var speed := 150.0
 
 @onready var player: Player = owner as Player
 

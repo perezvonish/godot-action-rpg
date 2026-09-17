@@ -1,0 +1,26 @@
+[gd_resource type="TileSet" format=3 uid="uid://dd5tcp3flvsgj"]
+
+[ext_resource type="Texture2D" uid="uid://cqh6wnxlgigb0" path="res://assets/food.png" id="1_w6lj5"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jawtv"]
+texture = ExtResource("1_w6lj5")
+9:9/0 = 0
+8:9/0 = 0
+7:9/0 = 0
+6:9/0 = 0
+5:9/0 = 0
+4:9/0 = 0
+3:9/0 = 0
+2:9/0 = 0
+1:9/0 = 0
+
+[resource]
+physics_layer_0/collision_layer = 1
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "Grass"
+terrain_set_0/terrain_0/color = Color(0.14901961, 0.87058824, 0.19607843, 1)
+terrain_set_0/terrain_1/name = "Stone"
+terrain_set_0/terrain_1/color = Color(0.664498, 0.47566164, 1.92523e-07, 1)
+custom_data_layer_0/name = "heal_per_second"
+custom_data_layer_0/type = 2
+sources/3 = SubResource("TileSetAtlasSource_jawtv")

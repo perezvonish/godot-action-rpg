@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ighn02jwjn53"]
 
-[ext_resource type="TileSet" uid="uid://bffklrloxur8d" path="res://core/tile_sets/global_world.tres" id="1_matif"]
+[ext_resource type="TileSet" uid="uid://bffklrloxur8d" path="res://core/tile_sets/world.tres" id="1_matif"]
 
 [node name="Base" type="Node2D" unique_id=1769250358]
 
