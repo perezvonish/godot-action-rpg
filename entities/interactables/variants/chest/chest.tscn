@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bya8f6vi72qr1"]
+
+[ext_resource type="PackedScene" uid="uid://d2yl8l856rs4l" path="res://entities/interactables/base_interactable.tscn" id="1_hqilh"]
+[ext_resource type="Script" uid="uid://wx77vyenqosp" path="res://entities/interactables/variants/chest/chest.gd" id="2_lceqt"]
+[ext_resource type="Texture2D" uid="uid://dty8t8eak5pia" path="res://assets/chest.png" id="2_tfpcd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hx1mh"]
+atlas = ExtResource("2_tfpcd")
+region = Rect2(1, 1, 16, 15)
+
+[node name="Base" unique_id=1893264184 instance=ExtResource("1_hqilh")]
+script = ExtResource("2_lceqt")
+
+[node name="Sprite2D" parent="." index="0" unique_id=2018146450]
+texture = SubResource("AtlasTexture_hx1mh")

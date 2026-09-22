@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://d2yl8l856rs4l"]
+
+[ext_resource type="Script" uid="uid://cn1a2h3ayu6al" path="res://entities/interactables/interaction.gd" id="1_408ne"]
+[ext_resource type="Script" uid="uid://co0ldxhuumyp" path="res://entities/interactables/base_interactable.gd" id="1_i6wkl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_66bpk"]
+size = Vector2(18, 18)
+
+[node name="Base" type="StaticBody2D" unique_id=1687473227]
+script = ExtResource("1_i6wkl")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2018146450]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=391189868]
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="Components" type="Node2D" parent="." unique_id=153241087]
+
+[node name="Interaction" type="Area2D" parent="Components" unique_id=2126854767]
+script = ExtResource("1_408ne")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Components/Interaction" unique_id=1124203855]
+shape = SubResource("RectangleShape2D_66bpk")
+debug_color = Color(0.29301044, 0.60679585, 0.48143715, 0.41960785)
