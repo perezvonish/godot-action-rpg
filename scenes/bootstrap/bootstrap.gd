@@ -47,6 +47,11 @@ func _on_game_start_requested():
 	objects.add_child(player)
 	add_child(player_menu)
 	player_menu.bind_inventory(player.inventory_controller)
+	
+	var transfers := InventoryTransferController.new()
+	transfers.bind_context(player.inventory_controller, player.nearby_items, objects)
+	
+	player_menu.bind_transfers(transfers)
 	player_menu.closed.connect(_on_player_menu_closed)
 	add_child(hud)
 	hud.bind_health(player.health_controller)

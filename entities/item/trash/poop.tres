@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bj8nyfoptrwh6"]
+
+[ext_resource type="Script" uid="uid://bvpjirukj2568" path="res://entities/item/data.gd" id="1_538kn"]
+[ext_resource type="Texture2D" uid="uid://cqh6wnxlgigb0" path="res://assets/food.png" id="2_nsq8n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nsq8n"]
+atlas = ExtResource("2_nsq8n")
+region = Rect2(65, 529, 14, 14)
+
+[resource]
+script = ExtResource("1_538kn")
+id = "item_trash_poop"
+title = "Poop"
+description = "Bruhhhh smell"
+max_stack_quantity = 100
+texture = SubResource("AtlasTexture_nsq8n")
+metadata/_custom_type_script = "uid://bvpjirukj2568"

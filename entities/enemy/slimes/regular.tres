@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://bam1qfr1nxs0x"]
+
+[ext_resource type="Script" uid="uid://cfxp0g04uq3ir" path="res://entities/npc/enemy/data.gd" id="1_l4tg7"]
+
+[sub_resource type="Gradient" id="Gradient_iknvs"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.0026454926)
+colors = PackedColorArray(0, 0, 0, 1, 1, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_r43gg"]
+gradient = SubResource("Gradient_iknvs")
+width = 14
+height = 14
+
+[resource]
+script = ExtResource("1_l4tg7")
+title = "Slime"
+description = "xcv"
+base_damage = 5
+id = "enemy_slime_regular"
+max_health = 25
+texture = SubResource("GradientTexture2D_r43gg")

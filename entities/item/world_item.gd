@@ -9,7 +9,7 @@ signal changed
 		data = value
 		if Engine.is_editor_hint() and is_node_ready():
 			_update_visual()
-@export_range(1, 9999) var quantity: int
+@export_range(1, 9999) var quantity: int = 1
 
 var item: Item:
 	set(value):

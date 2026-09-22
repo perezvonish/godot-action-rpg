@@ -18,14 +18,14 @@ func _ready() -> void:
 		return
 
 	detection_area.player_entered.connect(_make_hit)
-	health_controller.initialize(data.health)
+	health_controller.initialize(data.max_health)
 
 
 func take_damage(value: int) -> void:
 	health_controller.take_damage(value)
 
 func _make_hit(player: Player) -> void:
-	player.take_damage(data.damage)
+	player.take_damage(data.base_damage)
 
 func _update_visual() -> void:
 	sprite.texture = data.texture if data != null else null

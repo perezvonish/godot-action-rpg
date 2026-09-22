@@ -1,7 +1,10 @@
 class_name Player
 extends CharacterBody2D
 
+const NearbyItems = preload("res://entities/player/systems/nearby_items.gd")
+
 @export var inventory_controller: InventoryController
+@export var nearby_items: NearbyItems
 
 @onready var stats: PlayerStats = $Systems/Stats
 @onready var health_controller: HealthController = $Systems/Health
