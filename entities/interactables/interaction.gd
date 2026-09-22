@@ -31,3 +31,12 @@ func interact(actor: Node) -> void:
 		return
 
 	interacted.emit(actor)
+	
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("player_interact"):
+		handle_interact()
+		
+func handle_interact() -> void:
+	if is_instance_valid(nearby_player) and nearby_player.input_enabled:
+		interact(nearby_player)
+		get_viewport().set_input_as_handled()
